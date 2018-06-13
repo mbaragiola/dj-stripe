@@ -3112,7 +3112,10 @@ class Account(StripeObject):
     support_phone = StripeCharField(max_length=255, help_text=(
         "A publicly shareable support phone number for the business"
     ))
-    support_url = StripeCharField(max_length=200, help_text=(
+    support_url = StripeCharField(
+        max_length=200,
+        stripe_required=False,
+        help_text=(
         "A publicly shareable URL that provides support for this account"
     ))
     timezone = StripeCharField(max_length=50, help_text=(
