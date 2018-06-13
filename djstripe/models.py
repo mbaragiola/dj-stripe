@@ -3055,7 +3055,11 @@ class Account(StripeObject):
     business_name = StripeCharField(max_length=255, help_text=(
         "The publicly visible name of the business"
     ))
-    business_primary_color = StripeCharField(max_length=7, null=True, help_text=(
+    business_primary_color = StripeCharField(
+        max_length=7,
+        null=True,
+        stripe_required=False,
+        help_text=(
         "A CSS hex color value representing the primary branding color for this account"
     ))
     business_url = StripeCharField(max_length=200, null=True, help_text=(
